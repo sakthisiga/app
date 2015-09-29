@@ -1,5 +1,4 @@
 <style>
-body{width:414px;font-family:Arial;font-size:14px;}
 
 label{color:#6c6c6c;}
 
@@ -16,7 +15,7 @@ label.required:after{content:'*';color:red;}
 .row{margin:5px;}
 </style>
 
-<?php echo validation_errors(); ?>
+
     <?php echo  form_open('email/send'); ?>
 		<div class="row">
 			<label for="name">Your name:</label><br />
@@ -33,4 +32,4 @@ label.required:after{content:'*';color:red;}
 		<input type="hidden" name="action" value="submit"/>
 		<input id="submit_button" type="submit" value="Send email" />
 	<?php echo form_close(); ?>
-	
+	<?php echo validation_errors(); ?>

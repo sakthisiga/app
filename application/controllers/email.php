@@ -10,10 +10,15 @@ class email extends CI_Controller {
 	
 	public function index()
 		{
+			$data['title'] = "Application :: Contact Us Page";
+			
+			$this->load->view('HandF/header.php',$data);
 			$this->load->view('contactus');
+			$this->load->view('HandF/footer.php');
 		}
 	public function send()
 		{
+			$data['title'] = "Application :: Contact Us Page";
 			
 			$this->load->library('form_validation');
 			$this->form_validation->set_rules('name','Name', 'trim|required');
@@ -22,7 +27,9 @@ class email extends CI_Controller {
 			
 			if($this->form_validation->run()==FALSE)
 			{
+				$this->load->view('HandF/header.php',$data);
 				$this->load->view('contactus');
+				$this->load->view('HandF/footer.php');
 			}
 			else
 			{
@@ -54,4 +61,5 @@ class email extends CI_Controller {
 				
 			}
 		}
+
 }

@@ -18,25 +18,21 @@ class register extends CI_Controller {
 				$data['records'] = $query;
 			}
 			
-			$this->load->view('HandF/header.php',$data);
-			$this->load->view('register_v',$data);
-			$this->load->view('HandF/footer.php');
+			$data['main_content'] = 'register_v';
+			$this->load->view('includes/template', $data);
 		}
 		
 	public function create()
 	{
-			$this->load->model('register_model');
-			$this->load->library('form_validation');
-			$this->form_validation->set_rules('name','Name', 'trim|required');
-			$this->form_validation->set_rules('state','State', 'trim|required');
-			$this->form_validation->set_rules('city','City', 'trim|required');
-			$this->form_validation->set_rules('phone','Phone Number', 'trim|required');
+		$this->load->model('register_model');
+		
+		$this->form_validation->set_rules('name','Name', 'trim|required');
+		$this->form_validation->set_rules('state','State', 'trim|required');
+		$this->form_validation->set_rules('city','City', 'trim|required');
+		$this->form_validation->set_rules('phone','Phone Number', 'trim|required');
 			
 		if($this->form_validation->run()==FALSE)
 		{
-			/*$this->load->view('HandF/header.php');
-			$this->load->view('register_v');
-			$this->load->view('HandF/footer.php');*/
 			$this->index();
 		}
 		else
@@ -51,6 +47,20 @@ class register extends CI_Controller {
 			$this->register_model->add_records($data);
 			$this->index();
 		}
+	}
+	
+	public function update()
+	{
+		$this->load->model('register_model');
+		$data = array(
+			'name' => 'Muthu',
+				'state' => 'Oklohama',
+				'city' => 'Norman',
+				'phone' => '4489901887'
+		);
+		
+		$this->register_model->update_record($data);
+		$this->index();
 	}
 	public function delete()
 	{

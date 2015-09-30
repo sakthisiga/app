@@ -22,7 +22,7 @@ class register_model extends CI_Model {
 	
 	public function update_record($data)
 	{
-		$this->db->where('id',2);
+		$this->db->where('id',$this->uri->segment(3));
 		$this->db->update('register',$data);
 	}
 	

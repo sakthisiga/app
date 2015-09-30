@@ -12,9 +12,8 @@ class email extends CI_Controller {
 		{
 			$data['title'] = "Application :: Contact Us Page";
 			
-			$this->load->view('HandF/header.php',$data);
-			$this->load->view('contactus');
-			$this->load->view('HandF/footer.php');
+			$data['main_content'] = 'contactus';
+			$this->load->view('includes/template', $data);	
 		}
 	public function send()
 		{
@@ -27,9 +26,7 @@ class email extends CI_Controller {
 			
 			if($this->form_validation->run()==FALSE)
 			{
-				$this->load->view('HandF/header.php',$data);
-				$this->load->view('contactus');
-				$this->load->view('HandF/footer.php');
+				$this->index();
 			}
 			else
 			{

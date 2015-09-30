@@ -1,6 +1,14 @@
 <style>
 
 label{color:#6c6c6c;}
+#register_form {
+	width: 300px;
+	background: url(../img/login_bg.jpg) repeat-x 0 0;
+	border: 1px solid white;
+	margin: 10px 10px 0;
+	padding: 1em;
+	-moz-border-radius: 3px;
+}
 
 input{line-height:31px;}
 
@@ -15,7 +23,7 @@ label.required:after{content:'*';color:red;}
 .row{margin:5px;}
 </style>
 
-
+<div id="register_form">
     <?php echo  form_open('register/create'); ?>
 		<div class="row">
 			<label for="name">Resource Name:</label><br />
@@ -37,10 +45,12 @@ label.required:after{content:'*';color:red;}
 		<input id="submit_button" type="submit" value="Register" />
 	<?php echo form_close(); ?>
 	<?php echo validation_errors(); ?>
+	</div>
 	<hr />
 		<u>Registered Details</u>
 		<table border="1">
 		<tr>
+			<th>S.No</th>
 			<th> ID </th>
 			<th> Name </th>
 			<th> State </th>
@@ -48,15 +58,18 @@ label.required:after{content:'*';color:red;}
 			<th> Phone </th>
 			<th> Action </th>
 		</tr>
+		<?php $count=1; ?>
 	<?php foreach($records as $row) : ?>
 		<tr>
-			<td> <?php echo $row->id; ?> </td>
+			<td><?php echo $count; ?></td>
+			<td> <?php echo "SD-00000".$row->id; ?> </td>
 			<td> <?php echo $row->name; ?> </td>
 			<td> <?php echo $row->state; ?> </td>
 			<td> <?php echo $row->city; ?> </td>
 			<td> <?php echo $row->phone; ?> </td>
 			<td> <?php echo anchor("register/delete/$row->id","Delete")?> </td>
 		</tr>
+		<?php $count++; ?>
 	<?php endforeach;?>
 	</table>
 	</div>

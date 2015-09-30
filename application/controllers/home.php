@@ -15,8 +15,7 @@ class home extends CI_Controller {
 			$data['title'] = "Application :: Dashboard Page";
 			
 			//View Section
-			$this->load->view('HandF/header.php',$data);
-			$this->load->view('home_v',$data);
-			$this->load->view('HandF/footer.php');
+			$data['main_content'] = 'home_v';
+			$this->load->view('includes/template', $data);
 		}
 }

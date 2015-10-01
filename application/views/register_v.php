@@ -1,14 +1,6 @@
 <style>
 
 label{color:#6c6c6c;}
-#register_form {
-	width: 300px;
-	background: url(../img/login_bg.jpg) repeat-x 0 0;
-	border: 1px solid white;
-	margin: 10px 10px 0;
-	padding: 1em;
-	-moz-border-radius: 3px;
-}
 
 input{line-height:31px;}
 

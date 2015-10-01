@@ -5,7 +5,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $title; ?></title>
-
+	
+	<!-- <link rel="stylesheet" href="<?php echo base_url();?>/css/style.css" type="text/css" media="screen" /> -->
+	
 	<style type="text/css">
 
 	::selection { background-color: #E13300; color: white; }
@@ -75,3 +77,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div id="container">
 	<h2>Application Test</h2>
+	<p align="right">Welcome Back, <?php echo $this->session->userdata('username'); echo anchor('login/logout', 'Logout!!'); ?></p>

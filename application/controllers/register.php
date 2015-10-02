@@ -6,12 +6,14 @@ class register extends CI_Controller {
 	public function __construct()
 		{
 			parent::__construct();
+			$this->is_logged_in();
 		}
 	
 	public function index()
 		{
 			$this->load->model('register_model');
 			$data['title'] = "Application :: Register Page";		
+			
 			
 			if($query = $this->register_model->get_records())
 			{
@@ -67,5 +69,16 @@ class register extends CI_Controller {
 		$this->load->model('register_model');
 		$this->register_model->delete_row();
 		$this->index();
+	}
+	
+	public function is_logged_in()
+	{
+			
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		if(!isset($is_logged_in) || $is_logged_in != true)
+		{
+			echo "inside fun";
+			redirect('login/index');
+		}
 	}
 }

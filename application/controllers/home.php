@@ -31,8 +31,8 @@ class home extends CI_Controller {
 			$is_logged_in = $this->session->userdata('is_logged_in');
 			if(!isset($is_logged_in) || $is_logged_in != true)
 			{
-				
-				$this->load->view('login_form');
+				echo "inside fun";
+				redirect('login/index');
 			}
 		}
 }

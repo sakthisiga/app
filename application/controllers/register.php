@@ -14,8 +14,16 @@ class register extends CI_Controller {
 			$this->load->model('register_model');
 			$data['title'] = "Application :: Register Page";		
 			
+			$config['base_url'] = 'http://localhost/app/index.php/register/index';
+			$config['total_rows'] = $this->db->get('register')->num_rows();
+			$config['per_page'] = 15;
+			$config['num_links'] = 20;
+			$config['full_tag_open'] = '<div id="pagination">';
+			$config['full_tag_close'] = '</div>';
 			
-			if($query = $this->register_model->get_records())
+			$this->pagination->initialize($config);
+			
+			if($query = $this->register_model->get_records($config['per_page'],$this->uri->segment(3)))
 			{
 				$data['records'] = $query;
 			}
@@ -77,7 +85,6 @@ class register extends CI_Controller {
 		$is_logged_in = $this->session->userdata('is_logged_in');
 		if(!isset($is_logged_in) || $is_logged_in != true)
 		{
-			echo "inside fun";
 			redirect('login/index');
 		}
 	}

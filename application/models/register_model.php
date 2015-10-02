@@ -8,9 +8,9 @@ class register_model extends CI_Model {
 	
 	}
 	
-	public function get_records()
+	public function get_records($pageconfig,$urisegment)
 	{
-		$query=$this->db->get('register');
+		$query=$this->db->get('register',$pageconfig,$urisegment);
 		return $query->result();
 	}
 	

@@ -75,7 +75,6 @@ class login extends CI_Controller {
 	public function logout()
 	{
 	    $this->session->sess_destroy();
-	    $data['title'] = "Application :: Login Page";
-		$this->load->view('login_form', $data);
+	    $this->index();
 	}
 }

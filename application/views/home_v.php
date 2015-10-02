@@ -1,7 +1,8 @@
-<h1> Home Page</h1>
-	<div id="body">
-		<p> The page contains the information about the company or organization to help the customer understands the nature of business.</p>
-		<u>Users List</u>
+<div class="span9">
+	 <div class="hero-unit">
+            <h1>Welcome to Mon Journal!</h1>
+            <p>
+            		<u>Users List</u>
 		<table border="1">
 		<tr>
 			<th> ID </th>
@@ -18,4 +19,9 @@
 		</tr>
 	<?php endforeach;?>
 	</table>
+            </p>
+            <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+          </div>
+				
+	</div>
 	</div>

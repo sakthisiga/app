@@ -49,28 +49,29 @@ label.required:after{content:'*';color:red;}
 
 .row{margin:5px;}
 </style>
-
+<div class="span9">
+	 <div class="hero-unit">
 <div id="register_form">
     <?php echo  form_open('register/create'); ?>
 		<div class="row">
-			<label for="name">Resource Name:</label><br />
-			<input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+		<label for="name">Name:</label><br />
+			<?php echo form_input('name', set_value('name')); ?>
 		</div>
 		<div class="row">
-			<label for="state">State:</label><br />
-			<input id="state" class="input" name="state" type="text" value="" size="10" /><br />
+		<label for="state">State:</label><br />
+			<?php echo form_input('state', set_value('state')); ?>
 		</div>
 		<div class="row">
-			<label for="city">City:</label><br />
-			<input id="city" class="input" name="city" type="text" value="" size="10" /><br />
+		<label for="city">City:</label><br />
+			<?php echo form_input('city', set_value('city')); ?>
 		</div>
 		<div class="row">
 			<label for="phone">Phone:</label><br />
-			<input id="phone" class="input" name="phone" type="text" value="" size="10" /><br />
+			<?php echo form_input('phone', set_value('phone')); ?><br />
 		</div>
-		<input type="hidden" name="action" value="submit"/>
+		
 		<input id="submit_button" type="submit" value="Register" />
-	<?php echo form_close(); ?>
+	<?php //echo form_close(); ?>
 	<?php echo validation_errors(); ?>
 	</div>
 	<hr />
@@ -103,3 +104,5 @@ label.required:after{content:'*';color:red;}
 <script type="text/javascript" charset="utf-8">
 	$('tr:odd').css('background', '#e3e3e3');
 </script>
+</div>
+</div>

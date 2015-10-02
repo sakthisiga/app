@@ -13,8 +13,8 @@ class home_model extends CI_Model {
 	
 	public function getValue()
 	{
-		$sql = "SELECT * from users where id = ? and fname = ?";
-		$query = $this->db->query($sql, array(1,'Sakthivel'));
+		$sql = "SELECT * from users";
+		$query = $this->db->query($sql);
 	//	$query = $this->db->get('users');
 		if($query->num_rows() > 0)
 			{

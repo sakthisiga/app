@@ -1,0 +1,1 @@
+At the request of some of our readers, this week, we'll examine just how easy it is to send emails with attachments using Gmail. With raw PHP, this would be a long and tedious task. However, with CodeIgniter, it's a cinch! I'll show you how in this eighteen minute video tutorial.

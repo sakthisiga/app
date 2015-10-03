@@ -16,7 +16,7 @@ class register extends CI_Controller {
 			
 			$config['base_url'] = 'http://localhost/app/index.php/register/index';
 			$config['total_rows'] = $this->db->get('register')->num_rows();
-			$config['per_page'] = 15;
+			$config['per_page'] = 10;
 			$config['num_links'] = 20;
 			$config['full_tag_open'] = '<div id="pagination">';
 			$config['full_tag_close'] = '</div>';

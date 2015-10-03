@@ -34,49 +34,59 @@ table {
 	 font-weight: normal;
 	 background: #cac9c9;
 	}	
-	
-label{color:#6c6c6c;}
 
-input{line-height:31px;}
-
-input,textarea{width:288px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;background-color:rgba(255,255,255,.6);border:solid 1px #b6c7cb;}
-
-#contact_form{height:317px;background-color:#e1e9eb;border:solid 1px #e5e5e5;padding:10px 20px 50px 20px;  -webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
-
-#submit_button{width:109px;height:34px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;background-color:#86c5fa;-webkit-box-shadow:inset 0 2px rgba(255,255,255,.29);-moz-box-shadow:inset 0 2px rgba(255,255,255,.29);box-shadow:inset 0 2px rgba(255,255,255,.29);border:solid 1px #77a4cb;font-weight:bold;color:#fff;margin-left:7px;}
-
-label.required:after{content:'*';color:red;}
 
 .row{margin:5px;}
 </style>
 <div class="span9">
 	 <div class="hero-unit">
-<div id="register_form">
-    <?php echo  form_open('register/create'); ?>
-		<div class="row">
-		<label for="name">Name:</label><br />
-			<?php echo form_input('name', set_value('name')); ?>
+    <?php 
+    $formattribs = array('class'=>'form-horizontal');
+    echo  form_open('register/create',$formattribs); ?>
+    <fieldset>
+  <legend>User Registration Form</legend>
+		<div class="control-group">
+		<label class="control-label" for="name">Name:</label>
+		<div class="controls">
+			<?php 
+			$att=array('placeholder'=>'Your Name', 'class' => 'input-xlarge');
+			echo form_input('name', set_value('name'),$att); ?>
 		</div>
-		<div class="row">
-		<label for="state">State:</label><br />
+		</div>
+		<div class="control-group">
+		<label class="control-label" for="state">State:</label>
+		<div class="controls">
 			<?php echo form_input('state', set_value('state')); ?>
 		</div>
-		<div class="row">
-		<label for="city">City:</label><br />
-			<?php echo form_input('city', set_value('city')); ?>
 		</div>
-		<div class="row">
-			<label for="phone">Phone:</label><br />
+		<div class="control-group">
+		<label class="control-label" for="city">City:</label>
+		<div class="controls">
+			<?php echo form_input('city', set_value('city')); ?>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="phone">Phone:</label>
+			<div class="controls">
 			<?php echo form_input('phone', set_value('phone')); ?><br />
 		</div>
-		
-		<input id="submit_button" type="submit" value="Register" />
+		</div>
+		<div class="control-group">
+		<div class="controls">
+		<input class="btn btn-primary" id="submit_button" type="submit" value="Register" />
+		<input class="btn" id="submit_button" type="reset" value="Reset" />
+		</div>
+		</div>
+		 </fieldset>
 	<?php //echo form_close(); ?>
-	<?php echo validation_errors(); ?>
-	</div>
+	<?php echo validation_errors('<ul><li><font color="Red" size="3">','</font></li></ul>'); ?>
+	
+	
+
+
 	<hr />
-		<u>Registered Details</u>
-		<table border="1">
+		<h4>Registered Details</h4>
+		<table border="1" class="table table-bordered">
 		<tr>
 			<th> ID </th>
 			<th> Name </th>
@@ -99,10 +109,6 @@ label.required:after{content:'*';color:red;}
 	</table>
 	<?php echo $this->pagination->create_links(); ?>
 	</div>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>	
-
-<script type="text/javascript" charset="utf-8">
-	$('tr:odd').css('background', '#e3e3e3');
-</script>
+	
 </div>
 </div>

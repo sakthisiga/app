@@ -2,8 +2,8 @@
 	 <div class="hero-unit">
             <h1>Welcome to Mon Journal!</h1>
             <p>
-            		<u>Users List</u>
-		<table border="1">
+            		<h4>Users List</h4>
+		<table border="1" class="table table-bordered">
 		<tr>
 			<th> ID </th>
 			<th> First Name </th>

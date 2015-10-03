@@ -73,15 +73,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Mon Journal</a>
+          <a class="brand" href="<?php echo base_url(); ?>index.php/home">Mon Journal</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link"><?php echo $this->session->userdata('username'); echo " | ".anchor('login/logout', 'Logout!!'); ?></a>
+              Logged in as <a href="#" class="navbar-link"><?php echo $this->session->userdata('username'); ?></a><?php echo " | ".anchor('login/logout', 'Logout!!'); ?>
             </p>
             <ul class="nav">
-              <li><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="<?php echo base_url(); ?>index.php/register">Registation</a></li>
+              <li><a href="<?php echo base_url(); ?>index.php/email">Email</a></li>
+              <li><a href="<?php echo base_url(); ?>index.php/email">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

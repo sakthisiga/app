@@ -1,35 +1,36 @@
-<style>
-
-label{color:#6c6c6c;}
-
-input{line-height:31px;}
-
-input,textarea{width:288px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;background-color:rgba(255,255,255,.6);border:solid 1px #b6c7cb;}
-
-#contact_form{height:317px;background-color:#e1e9eb;border:solid 1px #e5e5e5;padding:10px 20px 50px 20px;  -webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
-
-#submit_button{width:109px;height:34px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;background-color:#86c5fa;-webkit-box-shadow:inset 0 2px rgba(255,255,255,.29);-moz-box-shadow:inset 0 2px rgba(255,255,255,.29);box-shadow:inset 0 2px rgba(255,255,255,.29);border:solid 1px #77a4cb;font-weight:bold;color:#fff;margin-left:7px;}
-
-label.required:after{content:'*';color:red;}
-
-.row{margin:5px;}
-</style>
-
-
-    <?php echo  form_open('email/send'); ?>
-		<div class="row">
-			<label for="name">Your name:</label><br />
-			<input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+<div class="span9">
+	 <div class="hero-unit">
+    <?php 
+    $formattribs = array('class'=>'form-horizontal');
+    echo  form_open('email/send',$formattribs); ?>
+    <fieldset>
+  <legend>Contact Us..</legend>
+		<div class="control-group">
+			<label class="control-label" for="name">Your name:</label>
+		<div class="controls">
+			<input id="name" class="input" name="name" type="text" value="" size="30" />
 		</div>
-		<div class="row">
-			<label for="email">Your email:</label><br />
-			<input id="email" class="input" name="email" type="text" value="" size="30" /><br />
 		</div>
-		<div class="row">
-			<label for="message">Your message:</label><br />
-			<textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+		<div class="control-group">
+			<label class="control-label" for="email">Your email:</label>
+			<div class="controls">
+			<input id="email" class="input" name="email" type="text" value="" size="30" />
 		</div>
-		<input type="hidden" name="action" value="submit"/>
-		<input id="submit_button" type="submit" value="Send email" />
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="message">Your message:</label>
+			<div class="controls">
+			<textarea id="message" class="input" name="message" rows="7" cols="30"></textarea>
+		</div>
+		</div>
+		<div class="control-group">
+		<div class="controls">
+		<input class="btn btn-primary" type="submit" value="Send email" />
+		</div>
+		</div>
 	<?php echo form_close(); ?>
 	<?php echo validation_errors(); ?>
+	</fieldset>
+	
+	</div>
+	</div>

@@ -3,7 +3,7 @@
 <html lang="en">
    <head>
       <meta charset="utf-8">
-      <title>Sign in &middot; Bootplus</title>
+      <title>Mon Journal &middot; Login Page</title>
       <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">

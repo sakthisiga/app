@@ -90,7 +90,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
+        <div class="span2">
           <div class="sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Sidebar</li>

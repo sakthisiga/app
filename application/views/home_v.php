@@ -21,7 +21,7 @@
 	</table>
             </p>
             <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-          </div>
+
 				
 	</div>
 	</div>

@@ -59,6 +59,31 @@ class register extends CI_Controller {
 		}
 	}
 	
+	public function enter()
+	{
+		
+		$this->load->model('product_model');
+			
+			 
+			
+		if ($this->input->post('ajax')) {
+			$data = array(
+					'product' => $this->input->post('product'),
+					'price' => $this->input->post('price'),
+					'quantity' => $this->input->post('quantity')
+			);
+			
+			$this->product_model->add_records($data);
+			
+			/*$data['main_content'] = 'enter_success';
+			$this->load->view('includes/template', $data); */
+		} else {
+			$data['main_content'] = 'enter_v';
+			$this->load->view('includes/template', $data);
+		}
+		
+	}
+	
 	public function update()
 	{
 		$this->load->model('register_model');
@@ -78,6 +103,8 @@ class register extends CI_Controller {
 		$this->register_model->delete_row();
 		$this->index();
 	}
+	
+	
 	
 	public function is_logged_in()
 	{

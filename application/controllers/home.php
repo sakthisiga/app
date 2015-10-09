@@ -25,6 +25,11 @@ class home extends CI_Controller {
 			$this->load->view('includes/template', $data);
 		}
 		
+	public function enter()
+	{
+		$data['main_content'] = 'enter_v';
+		$this->load->view('includes/template', $data);
+	}
 	public function is_logged_in()
 		{
 			

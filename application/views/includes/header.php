@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<title><?php echo $title; ?></title>
 	
 	<!-- <link rel="stylesheet" href="<?php echo base_url();?>/css/style.css" type="text/css" media="screen" /> -->
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>	
 	<style type="text/css">
 
 	::selection { background-color: #E13300; color: white; }

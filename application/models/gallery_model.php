@@ -15,7 +15,7 @@ class Gallery_model extends CI_Model {
 		$config = array(
 			'allowed_types' => 'jpg|jpeg|gif|png',
 			'upload_path' => $this->gallery_path,
-			'max_size' => 2000
+			'max_size' => 100000
 		);
 		
 		$this->load->library('upload', $config);
@@ -25,7 +25,7 @@ class Gallery_model extends CI_Model {
 		$config = array(
 			'source_image' => $image_data['full_path'],
 			'new_image' => $this->gallery_path . '/thumbs',
-			'maintain_ration' => true,
+			'maintain_ratio' => true,
 			'width' => 150,
 			'height' => 100
 		);

@@ -2,6 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class dbtest extends CI_Controller {
+	var $gallery_path;
+	var $gallery_path_url;
 	
 	public function __construct()
 		{
@@ -25,5 +27,14 @@ class dbtest extends CI_Controller {
 				echo "not found";
 			}
 		}
+		
+	public function disp()
+	{
+		
+		
+		echo $this->gallery_path = realpath(APPPATH);
+		echo "<br>";
+		echo $this->gallery_path_url = base_url();
+	}
 		
 }

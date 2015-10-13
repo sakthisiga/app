@@ -1,5 +1,5 @@
 <?php
-class Mycal_model extends CI_Model {
+class Mycal_model extends CI_Model{
 	
 	var $conf;
 	
@@ -9,17 +9,18 @@ class Mycal_model extends CI_Model {
 			'start_day' => 'monday',
 			'show_next_prev' => true,
 				'day_type'     => 'long',
-			'next_prev_url' => base_url() . 'mycal/display'
+			'next_prev_url' => base_url() . 'mycal/display',
+				'show_other_days' => FALSE
 		);
 		
 		$this->conf['template'] = '
 			{table_open}<table border="0" cellpadding="0" cellspacing="0" class="calendar">{/table_open}
 			
-			{heading_row_start}<tr>{/heading_row_start}
+			{heading_row_start}<tr height="75px">{/heading_row_start} 
 			
-			{heading_previous_cell}<th><a href="{previous_url}">&lt;&lt;</a></th>{/heading_previous_cell}
+			{heading_previous_cell}<th><a href="{previous_url}"><img src="http://localhost/app/img/lt.png" height="25px" width="25px"></a></th>{/heading_previous_cell}
 			{heading_title_cell}<th colspan="{colspan}">{heading}</th>{/heading_title_cell}
-			{heading_next_cell}<th><a href="{next_url}">&gt;&gt;</a></th>{/heading_next_cell}
+			{heading_next_cell}<th><a href="{next_url}"><img src="http://localhost/app/img/gt.png" height="25px" width="25px"></a></th>{/heading_next_cell}
 			
 			{heading_row_end}</tr>{/heading_row_end}
 			
@@ -61,7 +62,7 @@ class Mycal_model extends CI_Model {
 		
 		foreach ($query->result() as $row) {
 			$index = ltrim(substr($row->date,8,2),'0');
-			$cal_data[$index].=  "<li>".$row->data."<br>";
+			$cal_data[$index].=  "<li><font color='green'><b>".$row->data."</b></font><br>";
 		}
 		
 		return $cal_data;

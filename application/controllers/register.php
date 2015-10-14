@@ -6,11 +6,13 @@ class register extends CI_Controller {
 	public function __construct()
 		{
 			parent::__construct();
+			$this->output->enable_profiler(TRUE);
 			$this->is_logged_in();
 		}
 	
 	public function index()
 		{
+			
 			$this->load->model('register_model');
 			$data['title'] = "Application :: Register Page";		
 			
@@ -30,6 +32,7 @@ class register extends CI_Controller {
 			
 			$data['main_content'] = 'register_v';
 			$this->load->view('includes/template', $data);
+			log_message('info', 'DashBoard is loaded');
 		}
 		
 	public function create()

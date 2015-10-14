@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class register extends CI_Controller {
+class Register extends CI_Controller {
 	
 	public function __construct()
 		{
@@ -14,7 +14,7 @@ class register extends CI_Controller {
 			$this->load->model('register_model');
 			$data['title'] = "Application :: Register Page";		
 			
-			$config['base_url'] = 'http://localhost/app/index.php/register/index';
+			$config['base_url'] = 'http://localhost/app/register/index';
 			$config['total_rows'] = $this->db->get('register')->num_rows();
 			$config['per_page'] = 10;
 			$config['num_links'] = 20;
@@ -23,7 +23,7 @@ class register extends CI_Controller {
 			
 			$this->pagination->initialize($config);
 			
-			if($query = $this->register_model->get_records($config['per_page'],$this->uri->segment(3)))
+			if($query = $this->register_model->get_records($config['per_page'],'1'))
 			{
 				$data['records'] = $query;
 			}
